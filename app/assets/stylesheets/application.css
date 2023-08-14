@@ -13,3 +13,86 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+h1{
+  font-size: 2em;
+  margin: 0.8em 0;
+}
+
+h2{
+  margin: 0.8em 0;
+}
+
+p, ol, ul, td{
+  font-size: 13px;
+  margin:33px;
+  line-height: 18px;
+}
+
+th{
+  padding-bottom: 5px
+}
+
+td{
+  padding:0 5px 7px;
+}
+
+table{
+  display: table;
+  border-collapse: separate;/*セルの境目を重ねるか否か*/
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;/*境目の間隔*/
+}
+
+.error{
+  width: 450px;
+  border: 2px solid red;
+  padding:7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+.error h2{
+  text-align: left;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error ul li{
+  list-style: square;
+}
+
+.field{
+  margin-bottom: 10px
+}
+
+.button{
+  padding: 1px 6px;
+  margin-bottom: 10px
+}
+
+.flashmessage{
+  color: #339933;
+  margin: 33px;
+}

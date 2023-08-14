@@ -3,9 +3,14 @@ class BooksController < ApplicationController
   end
 
   def create #投稿の保存機能
-    book = Book.new(book_params) #データを受け取って新規登録するためのインスタンス作成
-    book.save
-    redirect_to book_path(book.id) #詳細画面へリダイレクト
+    @book = Book.new(book_params) #データを受け取って新規登録するためのインスタンス作成
+    if @book.save
+      flash[:notice] = "Book was successfully created."
+      redirect_to book_path(@book.id) #詳細画面へリダイレクト
+    else
+      @books = Book.all
+      render :index
+    end
   end
 
   def index #投稿画面と一覧画面
@@ -28,6 +33,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path
   end
 
   private
